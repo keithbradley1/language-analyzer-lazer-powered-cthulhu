@@ -2,26 +2,30 @@ lexicon = [
   {
     "sentiment":
     {
-      "positive": [],
-      "negative": [],
-      "neutral": []
+      "positive": ["totally", "good", "smart"],
+      "negative": ["divided", "not", "tough"],
+      "neutral": ["country", "watching", "looking"]
     },
     "domain":
     {
-      "financial": [],
-      "behavioral": [],
-      "scientific": [],
-      "educational": [],
-      "politics": [],
-      "relationships": []
+      "healthcare": [],
+      "war": ["enemies"],
+      "climate change": [],
+      "polictical correctness": []
     },
     "behavior":
     {
-      "aggressive": [],
-      "passive": [],
-      "mentoring": [],
-      "inquisitive": [],
-      "transaction": []
+      "dictator": [],
+      "hippie": [],
+      "blame": ["you", "they"],
+      "inspiring": [],
+      "hate": [],
+      "childish": [],
+      "mockery": ["smart"],
+      "pandering": ["smart"],
+      "supportive": ["good"],
+      "promises": [],
+      "patriotic": ["country"]
     }
   }
 ]

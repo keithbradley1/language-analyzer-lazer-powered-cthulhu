@@ -1,0 +1,10 @@
+class behavior_predictor():
+  class dictator():
+  class hippie():
+  class hate():
+  class childish():
+  class mockery():
+  class pandering():
+  class supportive():
+  class promises():
+  class patriotic():
