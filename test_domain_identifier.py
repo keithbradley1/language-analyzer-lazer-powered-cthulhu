@@ -1,13 +1,5 @@
 import unittest
-# from message_tokenizer import *
-
-
-# is a match
-# test that it has a value
-
-
-
-
+from domain_identifier import *
 
 class TestDomainIdentifier(unittest.TestCase):
   ''' Receives strings to be searched in the dictionary '''
@@ -19,7 +11,7 @@ class TestDomainIdentifier(unittest.TestCase):
 
 
 
-  # ----------------------------- WAR -------------------------------------------
+  # ------------------------- HEALTHCARE ----------------------------------------
 
   def test_message_has_match_in_healthcare(self):
     message = ['obamacare', 'hospital', 'insurance', 'healthcare']
