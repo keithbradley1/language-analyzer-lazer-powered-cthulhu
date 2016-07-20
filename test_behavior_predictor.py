@@ -4,379 +4,120 @@ from language_analyzer import *
 #################### behavior predictor tests ####################
 
 class TestBehavior(unittest.TestCase):
-''' Tests that behavoir predictor receives a message as a list to be evaluated'''
-  self.assertIs(list)
+''' Tests that behavoir predictor receives a message to be evaluated'''
 
 @classmethod
-
   def setUpClass(self):
-    ''' Our doc string '''
-    self.assertIs(string)
+    self.domain = behavior_predictor()
 
-  def test_(self):
-    ''' Our doc string '''
-    self.assertIs(string)
+#################### dictator tests ####################
 
-  def test_for_receipt_of_value_for_dictator(self):
-    ''' Tests that the list has keywords with a value of dictator '''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
+  def test_message_has_match_in_dictator(self):
+    message = ['commander', 'authoritarian']
+    self.assertEqual(self.domain.check_dictator(message), .16 ) # value grabber
 
+  def test_message_has_no_match_in_dictator(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_dictator(message), 0 ) # value grabber
 
-  def test_for_receipt_of_value_for_hippie(self):
-    ''' Tests that the list has keywords with a value of hippie '''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
+#################### hippie tests ####################
 
-    self.assertIs(list)
+  def test_message_has_match_in_hippie(self):
+    message = ['freethinker', 'bohemian']
+    self.assertEqual(self.domain.check_hippie(message), .16 ) # value grabber
 
-  def test_for_receipt_of_value_for_hate(self):
-    ''' Tests that the list has keywords with a value of hate '''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
+  def test_message_has_no_match_in_hippie(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_hippie(message), 0 ) # value grabber
 
-    self.assertIs(list)
+#################### blame tests ####################
 
-  def test_for_receipt_of_value_for_childish(self):
-    ''' Tests that the list has keywords with a value of childish '''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
+  def test_message_has_match_in_blame(self):
+    message = ['charge', 'censure']
+    self.assertEqual(self.domain.check_blame(message), .16 ) # value grabber
 
-    self.assertIs(list)
+  def test_message_has_no_match_in_blame(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_blame(message), 0 ) # value grabber
 
-  def test_for_receipt_of_value_for_mockery(self):
-    ''' Tests that the list has keywords with a value of mockery '''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
+#################### inspiring tests ####################
 
-    self.assertIs(list)
+  def test_message_has_match_in_inspiring(self):
+    message = ['invigorate', 'produce']
+    self.assertEqual(self.domain.check_inspiring(message), .16 ) # value grabber
 
-  def test_for_receipt_of_value_for_pandering(self):
-    ''' Tests that the list has keywords with a value of pandering '''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
+  def test_message_has_no_match_in_inspiring(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_inspiring(message), 0 ) # value grabber
 
-    self.assertIs(list)
+#################### hate tests ####################
 
-  def test_for_receipt_of_value_for_supportive(self):
-    ''' Tests that the list has keywords with a value of supportive '''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
+  def test_message_has_match_in_hate(self):
+    message = ['antagonism', 'greivance']
+    self.assertEqual(self.domain.check_hate(message), .16 ) # value grabber
 
-    self.assertIs(list)
+  def test_message_has_no_match_in_hate(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_hate(message), 0 ) # value grabber
 
-  def test_for_receipt_of_value_for_promises(self):
-    ''' Tests that the list has keywords with a value of promises '''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
+#################### childish tests ####################
 
-    self.assertIs(list)
+  def test_message_has_match_in_childish(self):
+    message = ['foolish', 'naive']
+    self.assertEqual(self.domain.check_childish(message), .16 ) # value grabber
 
-  def test_for_receipt_of_value_for_patriotic(self):
-    ''' Tests that the list has keywords with a value of patriotic '''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
+  def test_message_has_no_match_in_childish(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_childish(message), 0 ) # value grabber
 
-    self.assertIs(list)
+#################### mockery tests ####################
 
+  def test_message_has_match_in_mockery(self):
+    message = ['farse', 'sham']
+    self.assertEqual(self.domain.check_mockery(message), .16 ) # value grabber
 
-  #################### behavior predictor tests ####################
+  def test_message_has_no_match_in_mockery(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_mockery(message), 0 ) # value grabber
 
+#################### pandering tests ####################
 
-  class TestDictator(unittest.TestCase):
-    ''' Tests that message contains dictator keywords and stores them in a dict'''
-    self.assertIs(dict)
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
+  def test_message_has_match_in_pandering(self):
+    message = ['please', 'satisfy']
+    self.assertEqual(self.domain.check_pandering(message), .16 ) # value grabber
 
+  def test_message_has_no_match_in_pandering(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_pandering(message), 0 ) # value grabber
 
-    def test_for_receipt_of_dict(self):
-      ''' Tests that the list has keywords for dictator '''
-      self.assertIs(dict)
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
+#################### supportive tests ####################
 
+  def test_message_has_match_in_supportive(self):
+    message = ['backing', 'footing']
+    self.assertEqual(self.domain.check_supportive(message), .16 ) # value grabber
 
-    def tests_for_matches(self):
-      ''' Tests that the keywords match'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
+  def test_message_has_no_match_in_supportive(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_supportive(message), 0 ) # value grabber
 
-      self.assertEqual(dictator)
-
-    def tests_that_it_stores_matches_in_dict(self):
-      ''' Tests that matches are stored in a dict'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
+#################### promises tests ####################
 
-      self.assertIs(dict)
-
-  class TestHippie(unittest.TestCase):
-    ''' Tests that message contains hippie keywords'''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
+  def test_message_has_match_in_promises(self):
+    message = ['commitment', 'obligation']
+    self.assertEqual(self.domain.check_promises(message), .16 ) # value grabber
 
-    self.assertEqual(hippie)
-
-    def test_for_receipt_of_dict(self):
-      ''' Tests that the list has keywords for hippie '''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
+  def test_message_has_no_match_in_promises(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_promises(message), 0 ) # value grabber
 
-      self.assertIs(dict)
-
-    def tests_for_matches(self):
-      ''' Tests that the keywords match'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
+#################### patriotic tests ####################
 
-      self.assertEqual(hippie)
-
-    def tests_that_it_stores_matches_in_dict(self):
-      ''' Tests that matches are stored in a dict'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
+  def test_message_has_match_in_patriotic(self):
+    message = ['country', 'national']
+    self.assertEqual(self.domain.check_patriotic(message), .16 ) # value grabber
 
-      self.assertIs(dict)
-
-  class TestHate(unittest.TestCase):
-    ''' Tests that message contains hate keywords'''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
+  def test_message_has_no_match_in_patriotic(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_patriotic(message), 0 ) # value grabber
 
-    self.assertEqual(hate)
-
-    def test_for_receipt_of_dict(self):
-      ''' Tests that the list has keywords for hate '''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-    def tests_for_matches(self):
-      ''' Tests that the keywords match'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-    def tests_that_it_stores_matches_in_hate(self):
-      ''' Tests that matches are stored in a dict'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-  class TestChildish(unittest.TestCase):
-    ''' Tests that message contains dhildish keywords'''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
-
-    self.assertIs(dict)
-
-    def test_for_receipt_of_dict(self):
-       ''' Tests that the list has keywords for childish '''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-    def tests_for_matches(self):
-      ''' Tests that the keywords match'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-    def tests_that_it_stores_matches_in_childish(self):
-      ''' Tests that matches are stored in a dict'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-  class TestMockery(unittest.TestCase):
-    ''' Tests that message contains mockery keywords'''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
-
-     self.assertIs(dict)
-
-    def test_for_receipt_of_dict(self):
-      ''' Tests that the list has keywords for mockery '''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-    def tests_for_matches(self):
-      ''' Tests that the keywords match'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-    def tests_that_it_stores_matches_in_mockery(self):
-      ''' Tests that matches are stored in a dict'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-  class TestPandering(unittest.TestCase):
-    ''' Tests that message contains pandering keywords'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-    self.assertIs(dict)
-
-    def test_for_receipt_of_dict(self):
-      ''' Tests that the list has keywords for pandering '''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-    def tests_for_matches(self):
-      ''' Tests that the keywords match'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-    def tests_that_it_stores_matches_in_pandering(self):
-      ''' Tests that matches are stored in a dict'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-  class TestSupportive(unittest.TestCase):
-    ''' Tests that message contains supportive keywords'''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
-
-    self.assertIs(dict)
-
-     def test_for_receipt_of_dict(self):
-      ''' Tests that the list has keywords for dictator '''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-    def tests_for_matches(self):
-      ''' Tests that the keywords match'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-    def tests_that_it_stores_matches_in_supportive(self):
-      ''' Tests that matches are stored in a supportive'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-  class TestProimises(unittest.TestCase):
-    ''' Tests that message contains promises keywords'''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
-
-    self.assertIs(dict)
-
-    def test_for_receipt_of_dict(self):
-      ''' Tests that the list has keywords for promises '''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-    def tests_for_matches(self):
-      ''' Tests that the keywords match'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-    def tests_that_it_stores_matches_in_dict(self):
-      ''' Tests that matches are stored in a dict'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-  class TestPatriotic(unittest.TestCase):
-    ''' Tests that message contains patriotic keywords'''
-    message = self.message
-    for x in message:
-      assertEqual(True, isinstance(x, message))
-
-    self.assertIs(dict)
-
-    def test_for_receipt_of_dict(self):
-      ''' Tests that the list has keywords for patriotic '''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-    def tests_for_matches(self):
-      ''' Tests that the keywords match'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
-
-    def tests_that_it_stores_matches_in_dict(self):
-      ''' Tests that matches are stored in a dict'''
-      message = self.message
-      for x in message:
-        assertEqual(True, isinstance(x, message))
-
-      self.assertIs(dict)
 
