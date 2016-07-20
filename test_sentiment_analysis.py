@@ -3,7 +3,7 @@ from language_analyzer import *
 
 ########################## Sentiment Analysis Test ################################
 
-class sentiment_analysis(a):
+class sentiment_analysis(unittest.TestCase):
 	'''get key value pairs from the lexicon
 	each value should have True or False
 	giving it a value'''
@@ -11,85 +11,60 @@ class sentiment_analysis(a):
 ######################## Test for Positive #######################################
 
 
-class TestPositive(unittest.TestCase):
-	self.assertIs(dict)
-	message = self.message
-	for x in message:
-		assertEqual(True, isinstance(x, message))
-
-	def test_for_reciept_of_dict(self):
-		'''Test that the list has keywords for positive'''
-	self.assertIs(dict)
+class TestPositive():
 
 	def test_for_matches(self):
 		'''Test that keywords match'''
-	message = self.message
-	for x in message:
-		assertEqual(True, isinstance(x, message))
-
-		self.assertEqual(positive)
 
 	def test_that_it_stores_matches_in_dict(self):
 		'''Tests that matches are stored in a dict'''
-	message = self.message
-	for x in message:
-		assertEqual(True, isinstance(x, message))
-
-		self.assertIs(dict)
 
 ######################## Test for Negative #######################################
 
 
 class TestNegative():
-	self.assertIs(dict)
-	message = self.message
-	for x in message:
-		assertEqual(True, isinstance(x, message))
-
-	def test_for_reciept_of_dict(self):
-		'''Test that the list has keywords for negative'''
-	self.assertIs(dict)
 
 	def test_for_matches(self):
 		'''Test that keywords match'''
-	message = self.message
-	for x in message:
-		assertEqual(True, isinstance(x, message))
-
-		self.assertEqual(negative)
 
 	def test_that_it_stores_matches_in_dict(self):
 		'''Tests that matches are stored in a dict'''
-	message = self.message
-	for x in message:
-		assertEqual(True, isinstance(x, message))
-
-		self.assertIs(dict)
 
 ######################## Test for Neutral #######################################
 
 class TestNeutral():
-  	self.assertIs(dict)
-	message = self.message
-	for x in message:
-		assertEqual(True, isinstance(x, message))
-
-	def test_for_reciept_of_dict(self):
-	'''Test that the list has keywords for neutral'''
-	self.assertIs(dict)
 
 	def test_for_matches(self):
 	'''Test that keywords match'''
-	message = self.message
-	for x in message:
-		assertEqual(True, isinstance(x, message))
-
-		self.assertEqual(neutral)
 
 	def test_that_it_stores_matches_in_dict(self):
 	'''Tests that matches are stored in a dict'''
-	message = self.message
-	for x in message:
-		assertEqual(True, isinstance(x, message))
 
-		self.assertIs(dict)
+
+
+
+############ ignore this test thingie just for showing the group ##################
+
+#my idea for getting values for things. using the lexicon1
+
+sampleSentenceSplitUpIntoIndividualKeys = {'I', 'enjoy', 'and', 'love', 'waffles'}
+sentimentLexiconThingie = {'love': .05, 'joy': .05, 'enjoy': .05, 'smile': .05, }
+
+for key in sentimentLexiconThingie():
+	if key in sampleSentenceSplitUpIntoIndividualKeys():
+		print(sentimentLexiconThingie[key])
+
+#this could also potentially be stated as this below
+
+for key in sentimentLexiconThingie:
+	if key in sampleSentenceSplitUpIntoIndividualKeys:
+		print(sentimentLexiconThingie[key])
+
+'''prints: or gives us. we can also instead of printing the values
+we could just store it into a new list
+[.05, .05]
+We then add those values
+that gives us the sentiment value total. which here would be .1
+
+then definitely print the total sentiment value
+'''
