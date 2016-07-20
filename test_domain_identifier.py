@@ -1,5 +1,7 @@
 import unittest
+
 from domain_identifier import *
+
 
 class TestDomainIdentifier(unittest.TestCase):
   ''' Receives strings to be searched in the dictionary '''
