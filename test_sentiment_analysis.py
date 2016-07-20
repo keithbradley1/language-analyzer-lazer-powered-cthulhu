@@ -1,70 +1,56 @@
 import unittest
-from language_analyzer import *
+from domain_identifier import *
 
-########################## Sentiment Analysis Test ################################
+class TestDomainIdentifier(unittest.TestCase):
+  ''' Receives strings to be searched in the dictionary '''
 
-class sentiment_analysis(unittest.TestCase):
-	'''get key value pairs from the lexicon
-	each value should have True or False
-	giving it a value'''
-
-######################## Test for Positive #######################################
-
-
-class TestPositive():
-
-	def test_for_matches(self):
-		'''Test that keywords match'''
-
-	def test_that_it_stores_matches_in_dict(self):
-		'''Tests that matches are stored in a dict'''
-
-######################## Test for Negative #######################################
+  @classmethod
+  def setUpClass(self):
+    self.domain = Domain_Identifier()
+    pass
 
 
-class TestNegative():
 
-	def test_for_matches(self):
-		'''Test that keywords match'''
+  # ------------------------- Positive ----------------------------------------
 
-	def test_that_it_stores_matches_in_dict(self):
-		'''Tests that matches are stored in a dict'''
+  def test_message_has_match_in_positive(self):
+    message = ['totally', 'good', 'smart']
+    self.assertEqual(self.sentiment.check_positive(message), .32 )
 
-######################## Test for Neutral #######################################
-
-class TestNeutral():
-
-	def test_for_matches(self):
-	'''Test that keywords match'''
-
-	def test_that_it_stores_matches_in_dict(self):
-	'''Tests that matches are stored in a dict'''
+  def test_message_has_no_match_in_positive(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.sentiment.check_positive(message), 0 ) # value grabber
 
 
 
 
-############ ignore this test thingie just for showing the group ##################
+  # ----------------------------- Neutral -------------------------------------------
 
-#my idea for getting values for things. using the lexicon1
+  def test_message_has_match_in_neutral(self):
+    message = ['enemies', 'war']
+    self.assertEqual(self.sentiment.check_neutral(message), .16 ) # value grabber
 
-sampleSentenceSplitUpIntoIndividualKeys = {'I', 'enjoy', 'and', 'love', 'waffles'}
-sentimentLexiconThingie = {'love': .05, 'joy': .05, 'enjoy': .05, 'smile': .05, }
+  def test_message_has_no_match_in_neutral(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.sentiment.check_neutral(message), 0 ) # value grabber
 
-for key in sentimentLexiconThingie():
-	if key in sampleSentenceSplitUpIntoIndividualKeys():
-		print(sentimentLexiconThingie[key])
 
-#this could also potentially be stated as this below
 
-for key in sentimentLexiconThingie:
-	if key in sampleSentenceSplitUpIntoIndividualKeys:
-		print(sentimentLexiconThingie[key])
 
-'''prints: or gives us. we can also instead of printing the values
-we could just store it into a new list
-[.05, .05]
-We then add those values
-that gives us the sentiment value total. which here would be .1
+  # ------------------------ Negative -------------------------------------
 
-then definitely print the total sentiment value
-'''
+  def test_message_has_match_in_negative(self):
+    message = ['climate', 'greenhouse', 'aerosols', 'deforestation', 'atmosphere']
+    self.assertEqual(self.sentiment.check_negative(message), .4)
+
+  def test_message_has_no_match_in_negative(self):
+    message = ['food', 'computer']
+    self.assertEqual(self.sentiment.check_negative(message), 0 ) # value grabber
+
+
+
+
+if __name__ == '__main__':
+    unittest.main()
+
+
