@@ -1,4 +1,4 @@
-lexicon = [
+exicon = [
   {
     "sentiment":
     {
