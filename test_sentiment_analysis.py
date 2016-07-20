@@ -1,12 +1,13 @@
 import unittest
-from domain_identifier import *
 
-class TestDomainIdentifier(unittest.TestCase):
+from sentiment_identifier import *
+
+class TestSentimentIdentifier(unittest.TestCase):
   ''' Receives strings to be searched in the dictionary '''
 
   @classmethod
   def setUpClass(self):
-    self.domain = Domain_Identifier()
+    self.sentiment = Sentiment_Identifier()
     pass
 
 
