@@ -1,5 +1,8 @@
-class domain_identifier():
-  class healthcare():
-  class war():
-  class climate_change():
-  class political_correctness():
+# for x in message:
+#   assertEqual(True, isinstance(x, message))
+
+# class Domain_Identifier:
+
+# def check_healthcare(self):
+# find a match
+# grab values
