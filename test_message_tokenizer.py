@@ -69,7 +69,7 @@ class TestMessageTokenizer(unittest.TestCase):
 
 # -----------------Punctuation----------------------
   def test_message_contains_punctuation(self):
-    assertEqual("!", tokenizer.punctuation())
+    self.assertEqual("!", tokenizer.punctuation())
     pass
 
   # def test_punctuation_list_is_a_list(self):
