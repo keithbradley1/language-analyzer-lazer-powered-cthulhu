@@ -1,5 +1,3 @@
-import string
-
 
 class Tokenizer():
   def __init__(self, message):
