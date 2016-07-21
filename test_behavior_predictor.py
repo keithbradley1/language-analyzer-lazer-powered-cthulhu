@@ -4,180 +4,120 @@ from language_analyzer import *
 #################### behavior predictor tests ####################
 
 class TestBehavior(unittest.TestCase):
-''' Tests that behavoir predictor receives a message as a list to be evaluated'''
-  pass
+''' Tests that behavior predictor receives a message to be evaluated'''
 
 @classmethod
-
   def setUpClass(self):
-    ''' Our doc string '''
-    pass
+    self.domain = behavior_predictor()
 
-  def test_(self):
-    ''' Our doc string '''
-    pass
+#################### dictator tests ####################
 
-  def test_for_receipt_of_value_for_dictator(self):
-    ''' Tests that the list has keywords with a value of dictator '''
-    pass
+  def test_message_has_match_in_dictator(self):
+    message = ['commander', 'authoritarian']
+    self.assertEqual(self.domain.check_dictator(message), .16 ) # value grabber
 
-  def test_for_receipt_of_value_for_hippie(self):
-    ''' Tests that the list has keywords with a value of hippie '''
-    pass
+  def test_message_has_no_match_in_dictator(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_dictator(message), 0 ) # value grabber
 
-  def test_for_receipt_of_value_for_hate(self):
-    ''' Tests that the list has keywords with a value of hate '''
-    pass
+#################### hippie tests ####################
 
-  def test_for_receipt_of_value_for_childish(self):
-    ''' Tests that the list has keywords with a value of childish '''
-    pass
+  def test_message_has_match_in_hippie(self):
+    message = ['freethinker', 'bohemian']
+    self.assertEqual(self.domain.check_hippie(message), .16 ) # value grabber
 
-  def test_for_receipt_of_value_for_mockery(self):
-    ''' Tests that the list has keywords with a value of mockery '''
-    pass
+  def test_message_has_no_match_in_hippie(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_hippie(message), 0 ) # value grabber
 
-  def test_for_receipt_of_value_for_pandering(self):
-    ''' Tests that the list has keywords with a value of pandering '''
-    pass
+#################### blame tests ####################
 
-  def test_for_receipt_of_value_for_supportive(self):
-    ''' Tests that the list has keywords with a value of supportive '''
-    pass
+  def test_message_has_match_in_blame(self):
+    message = ['charge', 'censure']
+    self.assertEqual(self.domain.check_blame(message), .16 ) # value grabber
 
-  def test_for_receipt_of_value_for_promises(self):
-    ''' Tests that the list has keywords with a value of promises '''
-    pass
+  def test_message_has_no_match_in_blame(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_blame(message), 0 ) # value grabber
 
-  def test_for_receipt_of_value_for_patriotic(self):
-    ''' Tests that the list has keywords with a value of patriotic '''
-    pass
+#################### inspiring tests ####################
 
+  def test_message_has_match_in_inspiring(self):
+    message = ['invigorate', 'produce']
+    self.assertEqual(self.domain.check_inspiring(message), .16 ) # value grabber
 
-  #################### behavior predictor tests ####################
+  def test_message_has_no_match_in_inspiring(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_inspiring(message), 0 ) # value grabber
 
+#################### hate tests ####################
 
-  class TestDictator(unittest.TestCase):
-  ''' Tests that message contains dictator keywords and stores them in a dict'''
-    pass
+  def test_message_has_match_in_hate(self):
+    message = ['antagonism', 'greivance']
+    self.assertEqual(self.domain.check_hate(message), .16 ) # value grabber
 
-    def test_for_receipt_of_dict(self):
-    ''' Tests that the list has keywords for dictator '''
-      pass
-    def tests_for_matches(self):
-    ''' Tests that the keywords match'''
-      pass
-    def tests_that_it_stores_matches_in_dict(self):
-    ''' Tests that matches are stored in a dict'''
-      pass
-  class TestHippie(unittest.TestCase):
-  ''' Tests that message contains hippie keywords'''
-    pass
+  def test_message_has_no_match_in_hate(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_hate(message), 0 ) # value grabber
 
-    def test_for_receipt_of_dict(self):
-    ''' Tests that the list has keywords for hippie '''
-      pass
-    def tests_for_matches(self):
-    ''' Tests that the keywords match'''
-      pass
-    def tests_that_it_stores_matches_in_dict(self):
-    ''' Tests that matches are stored in a dict'''
-      pass
-  class TestHate(unittest.TestCase):
-  ''' Tests that message contains hate keywords'''
-    pass
+#################### childish tests ####################
 
-    def test_for_receipt_of_dict(self):
-    ''' Tests that the list has keywords for hate '''
-      pass
-    def tests_for_matches(self):
-    ''' Tests that the keywords match'''
-      pass
-    def tests_that_it_stores_matches_in_hate(self):
-    ''' Tests that matches are stored in a dict'''
-      pass
+  def test_message_has_match_in_childish(self):
+    message = ['foolish', 'naive']
+    self.assertEqual(self.domain.check_childish(message), .16 ) # value grabber
 
-  class TestChildish(unittest.TestCase):
-  ''' Tests that message contains dhildish keywords'''
-    pass
+  def test_message_has_no_match_in_childish(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_childish(message), 0 ) # value grabber
 
-    def test_for_receipt_of_dict(self):
-     ''' Tests that the list has keywords for childish '''
-      pass
-    def tests_for_matches(self):
-    ''' Tests that the keywords match'''
-      pass
-    def tests_that_it_stores_matches_in_childish(self):
-    ''' Tests that matches are stored in a dict'''
-      pass
+#################### mockery tests ####################
 
-  class TestMockery(unittest.TestCase):
-  ''' Tests that message contains mockery keywords'''
-     pass
+  def test_message_has_match_in_mockery(self):
+    message = ['farse', 'sham']
+    self.assertEqual(self.domain.check_mockery(message), .16 ) # value grabber
 
-    def test_for_receipt_of_dict(self):
-      ''' Tests that the list has keywords for mockery '''
-      pass
-    def tests_for_matches(self):
-    ''' Tests that the keywords match'''
-      pass
-    def tests_that_it_stores_matches_in_mockery(self):
-    ''' Tests that matches are stored in a dict'''
-      pass
+  def test_message_has_no_match_in_mockery(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_mockery(message), 0 ) # value grabber
 
-  class TestPandering(unittest.TestCase):
-  ''' Tests that message contains pandering keywords'''
-    pass
+#################### pandering tests ####################
 
-    def test_for_receipt_of_dict(self):
-    ''' Tests that the list has keywords for pandering '''
-      pass
-    def tests_for_matches(self):
-    ''' Tests that the keywords match'''
-      pass
-    def tests_that_it_stores_matches_in_pandering(self):
-    ''' Tests that matches are stored in a dict'''
-      pass
+  def test_message_has_match_in_pandering(self):
+    message = ['please', 'satisfy']
+    self.assertEqual(self.domain.check_pandering(message), .16 ) # value grabber
 
-  class TestSupportive(unittest.TestCase):
-  ''' Tests that message contains supportive keywords'''
-    pass
+  def test_message_has_no_match_in_pandering(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_pandering(message), 0 ) # value grabber
 
-     def test_for_receipt_of_dict(self):
-    ''' Tests that the list has keywords for dictator '''
-      pass
-    def tests_for_matches(self):
-    ''' Tests that the keywords match'''
-      pass
-    def tests_that_it_stores_matches_in_supportive(self):
-    ''' Tests that matches are stored in a supportive'''
-      pass
+#################### supportive tests ####################
 
-  class TestProimises(unittest.TestCase):
-  ''' Tests that message contains promises keywords'''
-    pass
+  def test_message_has_match_in_supportive(self):
+    message = ['backing', 'footing']
+    self.assertEqual(self.domain.check_supportive(message), .16 ) # value grabber
 
-     def test_for_receipt_of_dict(self):
-    ''' Tests that the list has keywords for promises '''
-      pass
-    def tests_for_matches(self):
-    ''' Tests that the keywords match'''
-      pass
-    def tests_that_it_stores_matches_in_dict(self):
-    ''' Tests that matches are stored in a dict'''
-      pass
+  def test_message_has_no_match_in_supportive(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_supportive(message), 0 ) # value grabber
 
-  class TestPatriotic(unittest.TestCase):
-  ''' Tests that message contains patriotic keywords'''
-    pass
+#################### promises tests ####################
 
-    def test_for_receipt_of_dict(self):
-    ''' Tests that the list has keywords for patriotic '''
-      pass
-    def tests_for_matches(self):
-    ''' Tests that the keywords match'''
-      pass
-    def tests_that_it_stores_matches_in_dict(self):
-    ''' Tests that matches are stored in a dict'''
-      pass
+  def test_message_has_match_in_promises(self):
+    message = ['commitment', 'obligation']
+    self.assertEqual(self.domain.check_promises(message), .16 ) # value grabber
+
+  def test_message_has_no_match_in_promises(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_promises(message), 0 ) # value grabber
+
+#################### patriotic tests ####################
+
+  def test_message_has_match_in_patriotic(self):
+    message = ['country', 'national']
+    self.assertEqual(self.domain.check_patriotic(message), .16 ) # value grabber
+
+  def test_message_has_no_match_in_patriotic(self):
+    message = ['trees', 'computer']
+    self.assertEqual(self.domain.check_patriotic(message), 0 ) # value grabber
+
 
