@@ -1,5 +1,5 @@
-
 from domain_lexicon import *
+
 
 class Domain_Identifier:
   ''' Runs methods for the list of words recieved from the tokenizer '''
