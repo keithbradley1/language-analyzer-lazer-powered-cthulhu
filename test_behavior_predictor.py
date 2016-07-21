@@ -20,6 +20,14 @@ class TestBehavior(unittest.TestCase):
     message = ['trees', 'computer']
     self.assertEqual(self.behavior.check_dictator(message), 0 ) # value grabber
 
+  def test_number_of_matches_in_dictator(self):
+      number_of_matches = 2
+      self.assertEqual(self.behavior.check_dictator(message), 2)
+
+  def test_average_of_match_values_in_dictator(self):
+      average_of_match_values = .08
+      self.assertEqual(self.behavior.check_dictator(message), .08)
+
   #################### hippie tests ####################
 
   def test_message_has_match_in_hippie(self):
