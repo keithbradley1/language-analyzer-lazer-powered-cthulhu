@@ -4,7 +4,7 @@ from language_analyzer import *
 #################### behavior predictor tests ####################
 
 class TestBehavior(unittest.TestCase):
-''' Tests that behavoir predictor receives a message to be evaluated'''
+''' Tests that behavior predictor receives a message to be evaluated'''
 
 @classmethod
   def setUpClass(self):
