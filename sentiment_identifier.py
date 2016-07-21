@@ -1,4 +1,3 @@
-
 from sentiment_lexicon import *
 
 class Sentiment_Identifier:
@@ -19,6 +18,20 @@ class Sentiment_Identifier:
     return positive_counter
 
 
+  def check_negative(self, message):
+    ''' Check to see if any words in the list of words matches
+        the negative change section of the sentiment lexicon.
+
+        If a matched word is found, take it's value and calculate
+        the total of all words matched in the list of tuples. '''
+
+    negative_counter = 0
+    for x in message:
+      for y in sentiment_lexicon["negative"]:
+        if x == y[0]:
+          negative_counter += y[1]
+    return negative_counter
+
 
   def check_neutral(self, message):
     ''' Check to see if any words in the list of words matches
@@ -35,17 +48,3 @@ class Sentiment_Identifier:
     return neutral_counter
 
 
-
-  def check_negative(self, message):
-    ''' Check to see if any words in the list of words matches
-        the negative change section of the sentiment lexicon.
-
-        If a matched word is found, take it's value and calculate
-        the total of all words matched in the list of tuples. '''
-
-    negative_counter = 0
-    for x in message:
-      for y in sentiment_lexicon["negative"]:
-        if x == y[0]:
-          negative_counter += y[1]
-    return negative_counter
