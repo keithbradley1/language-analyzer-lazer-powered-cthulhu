@@ -28,7 +28,7 @@ class TestMessageTokenizer(unittest.TestCase):
 
   def test_all_characters_are_alphanumeric(self):
     tokenizer = Tokenizer('This is my message!')
-    self.assertEqual({'y', 't', 's', 'm', 'i', 'h', 'e', 'g', 'a'}, tokenizer.alphanumeric())
+    self.assertEqual({'y', 'T', 's', 'm', 'i', 'h', 'e', 'g', 'a'}, tokenizer.alphanumeric())
 
   def test_alphanumeric_characters_are_a_set(self):
     tokenizer = Tokenizer('This is my message!')
@@ -72,9 +72,13 @@ class TestMessageTokenizer(unittest.TestCase):
   #
 
 # -----------------Punctuation----------------------
-  def test_message_contains_punctuation(self):
-    self.assertEqual("!", tokenizer.punctuation())
-    pass
+  # def test_message_contains_punctuation(self):
+  #   self.assertEqual("!", tokenizer.punctuation())
+  #   pass
+
+  def test_stripped_message_is_list_of_strings_with_no_punctuation(self):
+    tokenizer = Tokenizer('This is my message!')
+    self.assertEqual(['This', 'is', 'my', 'message'], tokenizer.stripped_message())
 
   # def test_punctuation_list_is_a_list(self):
   #   pass
