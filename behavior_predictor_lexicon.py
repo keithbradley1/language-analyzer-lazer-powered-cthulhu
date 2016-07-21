@@ -6,9 +6,9 @@ behavior_predictor_lexicon =
     "inspiring": [("sway", .08), ("invigorate", .08), ("produce", .08)],
     "hate": [("antagonism", .08), ("abomination", .08), ("grievance", .08)],
     "childish": [("foolish", .08), ("naive", .08)],
-    "mockery": [("smart", .08), ("farse", .08), ("sham", 08)],
-    "pandering": [("smart", .08), ("please", .08), ("satisfy", 08)],
-    "supportive": [("good", .08), ("backing", .08), ("footing", 08)],
+    "mockery": [("smart", .08), ("farse", .08), ("sham", .08)],
+    "pandering": [("smart", .08), ("please", .08), ("satisfy", .08)],
+    "supportive": [("good", .08), ("backing", .08), ("footing", .08)],
     "promises": [("commitment", .08), ("obligation", .08)],
-    "patriotic": [("country", .08), ("national", .08), ("loyal", 08)]
+    "patriotic": [("country", .08), ("national", .08), ("loyal", .08)]
   }
