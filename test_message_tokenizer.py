@@ -19,6 +19,7 @@ class TestMessageTokenizer(unittest.TestCase):
     self.assertEqual(str('This is my message!'), tokenizer.message)
 
   def test_message_is_lowercase(self):
+    tokenizer = Tokenizer('This is my message!')
     self.assertEqual(tokenizer.lowercase(), "this is my message!")
 
 # -----------------Alphanumeric Character Set Functions----------------------
@@ -26,24 +27,27 @@ class TestMessageTokenizer(unittest.TestCase):
   #   self.assertTrue(tokenizer.message(), str)
 
   def test_all_characters_are_alphanumeric(self):
-    self.assertEqual({"t", "h", "i", "s", "m", "y", "e", "a", "g"}, tokenizer.alphanumeric())
+    tokenizer = Tokenizer('This is my message!')
+    self.assertEqual({'y', 't', 's', 'm', 'i', 'h', 'e', 'g', 'a'}, tokenizer.alphanumeric())
 
   def test_alphanumeric_characters_are_a_set(self):
+    tokenizer = Tokenizer('This is my message!')
     self.assertTrue(tokenizer.alphanumeric(), set)
 
 # -----------------Word Count----------------------
-  def test_split_message_is_a_list_of_words(self):
-    self.assertTrue(tokenizer.message_word_list(), list)
+  def test_split_message_is_a_list_of_words_with_spaces_removed(self):
+    tokenizer = Tokenizer('This is my message!')
+    self.assertTrue(tokenizer.split_message(), ['This', 'is', 'my', 'message', '!'])
 
   def test_punctuation_is_removed(self):
+    tokenizer = Tokenizer('This is my message!')
     self.assertEqual('This is my message', tokenizer.no_punctuation())
 
   def test_that_word_count_returns_integer(self):
+    tokenizer = Tokenizer('This is my message!')
     self.assertEqual(4, tokenzier.word_count())
 
 # -----------------Word Position----------------------
-  def test_split_message_is_a_list_of_words(self):
-    self.assertTrue(tokenizer.split_message(), list)
 
   def test_message_order_is_unchanged(self):
     self.assertTrue(['This', 'is', 'my', 'message'], tokenizer.word_position())
