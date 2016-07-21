@@ -3,8 +3,11 @@ from domain_lexicon import *
 
 class Domain_Identifier:
   ''' Runs methods for the list of words recieved from the tokenizer '''
+  def __init__(self, message):
+    self.message = message
 
-  def check_healthcare(self, message):
+
+  def check_healthcare(self):
     ''' Check to see if any words in the list of words matches
         the healthcare section of the domain lexicon.
 
@@ -12,7 +15,7 @@ class Domain_Identifier:
         the total of all words matched in the list of tuples. '''
 
     health_counter = 0
-    for x in message:
+    for x in self.message:
       for y in domain_lexicon["healthcare"]:
         if x == y[0]:
           health_counter += y[1]
@@ -20,7 +23,7 @@ class Domain_Identifier:
 
 
 
-  def check_war(self, message):
+  def check_war(self):
     ''' Check to see if any words in the list of words matches
         the war section of the domain lexicon.
 
@@ -28,7 +31,7 @@ class Domain_Identifier:
         the total of all words matched in the list of tuples. '''
 
     war_counter = 0
-    for x in message:
+    for x in self.message:
       for y in domain_lexicon["war"]:
         if x == y[0]:
           war_counter += y[1]
@@ -36,7 +39,7 @@ class Domain_Identifier:
 
 
 
-  def check_climate_change(self, message):
+  def check_climate_change(self):
     ''' Check to see if any words in the list of words matches
         the climate change section of the domain lexicon.
 
@@ -44,7 +47,7 @@ class Domain_Identifier:
         the total of all words matched in the list of tuples. '''
 
     climate_change_counter = 0
-    for x in message:
+    for x in self.message:
       for y in domain_lexicon["climate change"]:
         if x == y[0]:
           climate_change_counter += y[1]
