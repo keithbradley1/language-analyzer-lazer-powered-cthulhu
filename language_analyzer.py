@@ -37,79 +37,119 @@ def execute_analyzer():
     # print(strip_the_punctuation_of_message)
 
     word_count_of_message = tokenizer.word_count()
-    print(word_count_of_message)
+    # print(word_count_of_message)
 
     word_position_of_message = tokenizer.word_position()
-    print(word_position_of_message)
+    # print(word_position_of_message)
 
     sentence_count_of_message = tokenizer.sentence_count()
-    print(sentence_count_of_message)
+    # print(sentence_count_of_message)
 
     punctuation_of_message = tokenizer.punctuation()
-    print(punctuation_of_message)
+    # print(punctuation_of_message)
 
+
+    print()
+    print()
+    print("Trump said, 'Our country is totally divided and our enemies are watching. We are not looking good, we are not looking smart, we are not looking tough!'")
+    print()
+    print()
+    print(" ~ On a scale of: 1 to 5 ~ ")
+    print()
+    print()
 
 
   # ------------------------- DOMAIN ----------------------------------------
-
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DOMAIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     domain = Domain_Identifier(strip_the_punctuation_of_message)
 
     healthcare_domain = domain.check_healthcare()
-    print(healthcare_domain)
+
+    print()
+    print("His message contained a HEALTHCARE value of: ", healthcare_domain)
 
     war_domain = domain.check_war()
-    print(war_domain)
+    print()
+    print("His message contained a WAR value of: ", war_domain)
 
     climate_change_domain = domain.check_climate_change()
-    print(climate_change_domain)
+    print()
+    print("His message contained a CLIMATE CHANGE value of: ", climate_change_domain)
 
+    print()
+    print("His message contained a POLITICAL CORRECTNESS value of: ", "TOO MUCH TO CALCULATE ¯\_(ツ)_/¯ ")
+    print()
+    print()
 
 
   # ------------------------- SENTIMENT --------------------------------------
-
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SENTIMENT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     sentiment = Sentiment_Identifier(strip_the_punctuation_of_message)
 
     positive_sentiment = sentiment.check_positive()
-    print(positive_sentiment)
+    print()
+    print("His message contained a POSITIVE value of: ", positive_sentiment)
 
     negative_sentiment = sentiment.check_negative()
-    print(negative_sentiment)
+    print()
+    print("His message contained a NEGATIVE value of: ", negative_sentiment)
+
 
     neutral_sentiment = sentiment.check_neutral()
-    print(neutral_sentiment)
-
+    print()
+    print("His message contained a NEUTRAL value of: ", neutral_sentiment)
+    print()
+    print()
 
   # ------------------------- BEHAVIOR ---------------------------------------
-
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ BEHAVIOR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     # behavior = Behavior_Predictor(strip_the_punctuation_of_message)
 
-    # dictator_behavior = behavior.check_dictator()
-    # print(dictator_behavior)
+    dictator_behavior = behavior.check_dictator()
+    print()
+    print("His message contained a DICTATOR value of: ", dictator_behavior)
 
-    # hippie_behavior = behavior.check_hippie()
-    # print(hippie_behavior)
 
-    # blame_behavior = behavior.check_blame()
-    # print(blame_behavior)
+    hippie_behavior = behavior.check_hippie()
+    print()
+    print("His message contained a HIPPIE value of: ", hippie_behavior)
 
-    # childish_behavior = behavior.check_childish()
-    # print(childish_behavior)
 
-    # mockery_behavior = behavior.check_mockery()
-    # print(mockery_behavior)
+    blame_behavior = behavior.check_blame()
+    print()
+    print("His message contained a BLAME value of: ", blame_behavior)
 
-    # pandering_behavior = behavior.check_pandering()
-    # print(pandering_behavior)
 
-    # supportive_behavior = behavior.check_supportive()
-    # print(supportive_behavior)
+    childish_behavior = behavior.check_childish()
+    print()
+    print("His message contained a CHILDISH value of: ", childish_behavior)
 
-    # promises_behavior = behavior.check_promises()
-    # print(promises_behavior)
 
-    # patriotic_behavior = behavior.check_patriotic()
-    # print(patriotic_behavior)
+    mockery_behavior = behavior.check_mockery()
+    print()
+    print("His message contained a MOCKERY value of: ", mockery_behavior)
 
+
+    pandering_behavior = behavior.check_pandering()
+    print()
+    print("His message contained a PANDERING value of: ", pandering_behavior)
+
+
+    supportive_behavior = behavior.check_supportive()
+    print()
+    print("His message contained a SUPPORTIVE value of: ", supportive_behavior)
+
+
+    promises_behavior = behavior.check_promises()
+    print()
+    print("His message contained a PROMISES value of: ", promises_behavior)
+
+
+    patriotic_behavior = behavior.check_patriotic()
+    print()
+    print("His message contained a PATRIOTIC value of: ", patriotic_behavior)
+    print()
+    print()
 
 
 
