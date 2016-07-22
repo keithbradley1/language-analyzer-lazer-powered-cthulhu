@@ -9,7 +9,7 @@ class TestDomainIdentifier(unittest.TestCase):
   @classmethod
   def setUpClass(self):
     self.domain = Domain_Identifier()
-    pass
+
 
 
 
