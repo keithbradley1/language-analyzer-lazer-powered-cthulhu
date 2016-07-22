@@ -6,10 +6,10 @@ from domain_identifier import *
 class TestDomainIdentifier(unittest.TestCase):
   ''' Receives strings to be searched in the dictionary '''
 
-  @classmethod
-  def setUpClass(self):
-    self.domain = Domain_Identifier()
-    pass
+  # @classmethod
+  # def setUpClass(self):
+  # self.domain = Domain_Identifier()
+
 
 
 
@@ -17,11 +17,13 @@ class TestDomainIdentifier(unittest.TestCase):
 
   def test_message_has_match_in_healthcare(self):
     message = ['obamacare', 'hospital', 'insurance', 'healthcare']
-    self.assertEqual(self.domain.check_healthcare(message), .32 )
+    domain = Domain_Identifier(message)
+    self.assertEqual(domain.check_healthcare(), .32 )
 
   def test_message_has_no_match_in_healthcare(self):
     message = ['trees', 'computer']
-    self.assertEqual(self.domain.check_healthcare(message), 0 ) # value grabber
+    domain = Domain_Identifier(message)
+    self.assertEqual(domain.check_healthcare(), 0 ) # value grabber
 
 
 
@@ -30,11 +32,13 @@ class TestDomainIdentifier(unittest.TestCase):
 
   def test_message_has_match_in_war(self):
     message = ['enemies', 'war']
-    self.assertEqual(self.domain.check_war(message), .16 ) # value grabber
+    domain = Domain_Identifier(message)
+    self.assertEqual(domain.check_war(), .16 ) # value grabber
 
   def test_message_has_no_match_in_war(self):
     message = ['trees', 'computer']
-    self.assertEqual(self.domain.check_war(message), 0 ) # value grabber
+    domain = Domain_Identifier(message)
+    self.assertEqual(domain.check_war(), 0 ) # value grabber
 
 
 
@@ -43,11 +47,13 @@ class TestDomainIdentifier(unittest.TestCase):
 
   def test_message_has_match_in_climate_change(self):
     message = ['climate', 'greenhouse', 'aerosols', 'deforestation', 'atmosphere']
-    self.assertEqual(self.domain.check_climate_change(message), .4)
+    domain = Domain_Identifier(message)
+    self.assertEqual(domain.check_climate_change(), .4)
 
   def test_message_has_no_match_in_climate_change(self):
     message = ['food', 'computer']
-    self.assertEqual(self.domain.check_climate_change(message), 0 ) # value grabber
+    domain = Domain_Identifier(message)
+    self.assertEqual(domain.check_climate_change(), 0 ) # value grabber
 
 
 
