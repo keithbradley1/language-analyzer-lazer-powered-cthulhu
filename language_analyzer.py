@@ -103,7 +103,7 @@ def execute_analyzer():
 
   # ------------------------- BEHAVIOR ---------------------------------------
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ BEHAVIOR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    # behavior = Behavior_Predictor(strip_the_punctuation_of_message)
+    behavior = Behavior_Predictor(strip_the_punctuation_of_message)
 
     dictator_behavior = behavior.check_dictator()
     print()
