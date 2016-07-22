@@ -5,7 +5,7 @@ class Behavior_Predictor:
   def __init__(self, message):
     self.message = message
 
-  def check_dictator(self, message):
+  def check_dictator(self):
     ''' Check to see if any words in the list of words matches
         the dictator section of the behavior predictor lexicon.
 
@@ -14,19 +14,16 @@ class Behavior_Predictor:
 
         get the number of matches
         average the matches and the values'''
-
+    matches = 2
     dictator_counter = 0
-    # matches = 2 (number of values >0)
     for x in self.message:
       for y in behavior_predictor_lexicon["dictator"]:
         if x == y[0]:
           dictator_counter += y[1]
-
-          # dictator_counter = (dictator_counter) / (matches)
-
+          # dictator_counter = dictator_counter / 2
     return dictator_counter
 
-  def check_hippie(self, message):
+  def check_hippie(self):
     ''' Check to see if any words in the list of words matches
         the hippie section of the behavior predictor lexicon.
 
@@ -41,7 +38,7 @@ class Behavior_Predictor:
     return hippie_counter
 
 
-  def check_blame(self, message):
+  def check_blame(self):
     ''' Check to see if any words in the list of words matches
         the blame section of the behavior predictor lexicon.
 
@@ -56,7 +53,7 @@ class Behavior_Predictor:
     return blame_counter
 
 
-  def check_inspiring(self, message):
+  def check_inspiring(self):
     ''' Check to see if any words in the list of words matches
         the inspiring section of the behavior predictor lexicon.
 
@@ -72,7 +69,7 @@ class Behavior_Predictor:
 
 
 
-  def check_hate(self, message):
+  def check_hate(self):
     ''' Check to see if any words in the list of words matches
         the hate section of the behavior predictor lexicon.
 
@@ -88,7 +85,7 @@ class Behavior_Predictor:
 
 
 
-  def check_childish(self, message):
+  def check_childish(self):
     ''' Check to see if any words in the list of words matches
         the childish section of the behavior predictor lexicon.
 
@@ -103,7 +100,7 @@ class Behavior_Predictor:
     return childish_counter
 
 
-  def check_mockery(self, message):
+  def check_mockery(self):
     ''' Check to see if any words in the list of words matches
         the mockery section of the behavior predictor lexicon.
 
@@ -119,7 +116,7 @@ class Behavior_Predictor:
 
 
 
-  def check_pandering(self, message):
+  def check_pandering(self):
     ''' Check to see if any words in the list of words matches
         the pandering section of the behavior predictor lexicon.
 
@@ -135,7 +132,7 @@ class Behavior_Predictor:
 
 
 
-  def check_supportive(self, message):
+  def check_supportive(self):
     ''' Check to see if any words in the list of words matches
         the supportive section of the behavior predictor lexicon.
 
@@ -151,7 +148,7 @@ class Behavior_Predictor:
 
 
 
-  def check_promises(self, message):
+  def check_promises(self):
     ''' Check to see if any words in the list of words matches
         the promises section of the behavior predictor lexicon.
 
@@ -167,7 +164,7 @@ class Behavior_Predictor:
 
 
 
-  def check_patriotic(self, message):
+  def check_patriotic(self):
     ''' Check to see if any words in the list of words matches
         the patriotic section of the behavior predictor lexicon.
 
