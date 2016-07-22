@@ -14,7 +14,7 @@ class Behavior_Predictor:
 
         get the number of matches
         average the matches and the values'''
-    matches = 2
+    # matches = 2
     dictator_counter = 0
     for x in self.message:
       for y in behavior_predictor_lexicon["dictator"]:
