@@ -36,13 +36,17 @@ def execute_analyzer():
     strip_the_punctuation_of_message = tokenizer.stripped_message()
     # print(strip_the_punctuation_of_message)
 
-  # word_count_of_message = tokenizer.word_count()
+    word_count_of_message = tokenizer.word_count()
+    print(word_count_of_message)
 
-  # word_position_of_message = tokenizer.word_position()
+    word_position_of_message = tokenizer.word_position()
+    print(word_position_of_message)
 
-  # sentence_count_of_message = tokenizer.sentence_count()
+    sentence_count_of_message = tokenizer.sentence_count()
+    print(sentence_count_of_message)
 
-  # punctuation_of_message = tokenizer.punctuation()
+    punctuation_of_message = tokenizer.punctuation()
+    print(punctuation_of_message)
 
 
 
@@ -77,34 +81,34 @@ def execute_analyzer():
 
   # ------------------------- BEHAVIOR ---------------------------------------
 
-    behavior = Behavior_Predictor(strip_the_punctuation_of_message)
+    # behavior = Behavior_Predictor(strip_the_punctuation_of_message)
 
-    dictator_behavior = behavior.check_dictator()
-    print(dictator_behavior)
+    # dictator_behavior = behavior.check_dictator()
+    # print(dictator_behavior)
 
-    hippie_behavior = behavior.check_hippie()
-    print(hippie_behavior)
+    # hippie_behavior = behavior.check_hippie()
+    # print(hippie_behavior)
 
-    blame_behavior = behavior.check_blame()
-    print(blame_behavior)
+    # blame_behavior = behavior.check_blame()
+    # print(blame_behavior)
 
-    childish_behavior = behavior.check_childish()
-    print(childish_behavior)
+    # childish_behavior = behavior.check_childish()
+    # print(childish_behavior)
 
-    mockery_behavior = behavior.check_mockery()
-    print(mockery_behavior)
+    # mockery_behavior = behavior.check_mockery()
+    # print(mockery_behavior)
 
-    pandering_behavior = behavior.check_pandering()
-    print(pandering_behavior)
+    # pandering_behavior = behavior.check_pandering()
+    # print(pandering_behavior)
 
-    supportive_behavior = behavior.check_supportive()
-    print(supportive_behavior)
+    # supportive_behavior = behavior.check_supportive()
+    # print(supportive_behavior)
 
-    promises_behavior = behavior.check_promises()
-    print(promises_behavior)
+    # promises_behavior = behavior.check_promises()
+    # print(promises_behavior)
 
-    patriotic_behavior = behavior.check_patriotic()
-    print(patriotic_behavior)
+    # patriotic_behavior = behavior.check_patriotic()
+    # print(patriotic_behavior)
 
 
 
