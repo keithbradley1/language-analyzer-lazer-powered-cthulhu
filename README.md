@@ -1,90 +1,56 @@
-# Language Analyzer Group Project
-
-## Information
-
-For this group project, design is of utmost importance. Team discussion, white boarding, and Trello cards will take up the majority of the time. You must consider the relationships between the different components. You must consider the inputs for behavior and the expected output.
-
-Also put significant thought into how inheritance, composition, and aggregation patterns will be used to create the relationships between all the modules.
-
-## Requirements
-
-1. A full test suite. There should be no logic in your project for which there is not a test.
-1. Documentation. Every class, and every method should have a docstring.
-
 # Language Analyzer
 
-The language analyzer is the main module that will use sentiment analysis, and behavior prediction to produce a report for each person's message.
+### Summary
+---
+This project is a language analyzer that analyzes 2016 presidential nominees' tweets. The program is intended to analyze a twitter message based on categories relating to the presidiential race. The categories used are sentiment, behavior, and domain.
 
-##### Example output
+Sentiment: The sentence gets scanned for the positive, neutral, or negative keywords then produces a value based on the amount of matches found.
 
-```
-# Yours **does not** have to look like this. It's just an example
+Behavior Predictor: The behavior of the sentence can be predicted to see if it fits into the categories of Dictator, Hippie, Blame, Childish, Mockery, Pandering, Supportive, Promises, and Patriotic.
 
-Message: "Suzy sells seashells by the seashore"
+Domain: The sentence is evaluated to see if it fits into the topic of Healthcare, War, Climate, and Political Correctness.
 
-Sentiment: 
-    0.52 (Positive)
+##### How it works:
+Our language analyzer takes each of the presidential tweets and runs it through our language_analyzer.py file. This file sends the tweets to our tokenizer which then strips the messages down to a list of strings. These stripped messages are then run through each module to determine the sentiment, behavior, and domain values. The result is printed in the command line for readability.
 
-Behavior(s): 
-    0.58 (Aggressive)
-    0.88 (Transaction)
+### Example
+---
+![Light Example](/readme_images/light_example.png)
 
-Domain(s): 
-    0.925 (Financial)
-```
+### Motivation
+---
 
-## Sentiment Analysis
+The motivation behind this project is to scan the presidential tweets and help citizens make a more conscious and informed decision for the Fall 2016 election.
 
-Sentiment analysis is a complex topic, but for this project you will use these basic criteria in your module.
+### Installation
+---
+If you're on Mac OS X, consider installing with [Homebrew](https://github.com/yyuu/pyenv#homebrew-on-mac-os-x). Run the command ```$ python --version``` from your command line , we recommend Python 3.3.6
 
-1. Words stored in the `sentiment` key of the lexicon.
-1. Punctuation (e.g. exclamation points may increase the sentiment value)
-1. Behavior value
+If you do not have pyenv use this [link](https://github.com/yyuu/pyenv#homebrew-on-mac-os-x) to install.
 
-Given these criteria, produce a sentiment value between 0 and 1 for each message.
+This project was built using Python 3.3, click [here](https://www.python.org/download/releases/3.3.0/) to install this version.
 
-## Behavior Predictor
+Once you have Python 3.3 installed you can pull down our code by using the following commands:
+- ```$ git clone https://github.com/nss-day-cohort-13/language-analyzer-lazer-powered-cthulhu.git```
+- ```$ cd language-analyzer-lazer-powered-cthulhu```
 
-This module will determine what behavior is expressed in a message. Use the following criteria.
+### Test the code
+---
+We implemented test driven development in this project. First we wrote a complete test suite for each of our modules. The test suite provided the framework and planning for the logic and implementation. Here is an example of passing tests used to assign values to the behvior predictor module.
 
-1. Words stored in the `behavior` key of the lexicon.
-1. Punctuation (e.g. question marks may indicate inquisitiveness, exclamation point may indicate aggressiveness)
+![Behavior Tests Passing](/readme_images/test_file_screen_shot.png)
 
-Given these criteria, produce a behavior value between 0 and 1 for each message, for each behavior identified.
+##### To run a test file for yourself:
+Type 'python' to start the python interpreter then the test file name you want to run. Here’s an example of running the behavior_predictor test file: ➜  
+``` python test_behavior_predictor.py -v ```
 
-> **Instructor guidance:** You may want to add more behaviors to the lexicon as you identify them.
+### Contributors
+---
+- [Amari Ashwood](https://github.com/ashwoodaa)
+- [Keith Bradley](https://github.com/keithbradley1)
+- [Carter Harris](https://github.com/carter-harris)
+- [Jessica Wynn](https://github.com/Jessicashinjo)
 
-## Tokenizer
-
-The tokenizer module will produce the following results for each message.
-
-1. Alphanumeric Characters
-1. Word count
-1. Word position
-1. Sentence count
-1. Punctuation
-
-## Domain Identifier
-
-The domain identification module will determine the subject matter of the message. Use the following criteria.
-
-1. Words stored in the `domain` key of the lexicon.
-1. Punctuation
-1. Word count
-
-Given these criteria, produce a domain value between 0 and 1 for each message, for each domain identified.
-
-> **Instructor guidance:** You may want to add more domains to the lexicon as you identify them.
-
-##### Example
-
-> Friendship is like money, easier made than kept.
-
-There are two domains in this small quote.
-
-1. Relationships
-1. Financial
-
-However, the word position of `friendship`, being at the beginning of the sentence, may indicate that is has a higher weight.
-
-
+### License
+---
+MIT
