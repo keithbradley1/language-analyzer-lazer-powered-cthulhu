@@ -2,14 +2,13 @@
 
 ### Summary
 ---
-A language analyzer that analyzes 2016 presidential nominees' tweets from Twitter.
-This program is intended to analyze a sentence, in our specific case tweets, for sentiment, behavior, and domain.
+This project is a language analyzer that analyzes 2016 presidential nominees' tweets. The program is intended to analyze a twitter message based on categories relating to the presidiential race. The categories used are sentiment, behavior, and domain.
 
 Sentiment: The sentence gets scanned for the positive, neutral, or negative keywords then produces a value based on the amount of matches found.
 
 Behavior Predictor: The behavior of the sentence can be predicted to see if it fits into the categories of Dictator, Hippie, Blame, Childish, Mockery, Pandering, Supportive, Promises, and Patriotic.
 
-Domain: The sentence is evaluated to see if it fits into the domain of Healthcare, War, Climate, and Political Correctness.
+Domain: The sentence is evaluated to see if it fits into the topic of Healthcare, War, Climate, and Political Correctness.
 
 ### Example
 ---
