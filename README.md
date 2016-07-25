@@ -10,6 +10,9 @@ Behavior Predictor: The behavior of the sentence can be predicted to see if it f
 
 Domain: The sentence is evaluated to see if it fits into the topic of Healthcare, War, Climate, and Political Correctness.
 
+##### How it works:
+Our language analyzer takes each of the presidential tweets and runs it through our language_analyzer.py file. This file sends the tweets to our tokenizer which then strips the messages down to a list of strings. These stripped messages are then run through each module to determine the sentiment, behavior, and domain values. The result is printed in the command line for readability.
+
 ### Example
 ---
 ![Light Example](/readme_images/light_example.png)
@@ -26,6 +29,10 @@ If you're on Mac OS X, consider installing with [Homebrew](https://github.com/yy
 If you do not have pyenv use this [link](https://github.com/yyuu/pyenv#homebrew-on-mac-os-x) to install.
 
 This project was built using Python 3.3, click [here](https://www.python.org/download/releases/3.3.0/) to install this version.
+
+Once you have Python 3.3 installed you can pull down our code by using the following commands:
+- ```$ git clone https://github.com/nss-day-cohort-13/language-analyzer-lazer-powered-cthulhu.git```
+- ```$ cd language-analyzer-lazer-powered-cthulhu```
 
 ### Test the code
 ---
